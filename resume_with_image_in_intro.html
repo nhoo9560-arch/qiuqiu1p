@@ -40,11 +40,6 @@
   </style>
 </head>
 <body>
-  
-<div style="text-align:center; margin-top:20px;">
-  <img src="image/gallery_1011_1864083_29591.jpg" alt="Building Image" style="width:80%; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
-</div>
-
   <div class="container">
     <div class="card" id="resumeCard">
       <aside class="sidebar">
@@ -81,13 +76,23 @@
 
       <main class="main">
         <div style="display:flex;justify-content:space-between;align-items:start;gap:12px">
-          <div>
-            <div class="label">個人簡介</div>
-            <p id="summary">一段短短的自我介紹，建議 2–4 句。描述你的專長、目標和你能為團隊帶來的價值。</p>
-          </div>
-          <div class="actions">
+          <div class="actions" style="margin-left:auto;">
             <button onclick="printResume()">列印 / 另存成 PDF</button>
             <button class="ghost" onclick="downloadHTML()">下載 HTML</button>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="label">個人簡介</div>
+          <div style="display:flex;align-items:flex-start;gap:16px;flex-wrap:wrap;">
+            <div style="flex:1;min-width:240px;">
+              <p id="summary">
+                一段短短的自我介紹，建議 2–4 句。描述你的專長、目標和你能為團隊帶來的價值。
+              </p>
+            </div>
+            <img src="image/gallery_1011_1864083_29591.jpg"
+                 alt="Profile Image"
+                 style="width:180px;height:auto;border-radius:10px;box-shadow:0 4px 12px rgba(0,0,0,0.1);object-fit:cover;">
           </div>
         </div>
 
