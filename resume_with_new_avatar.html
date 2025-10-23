@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>簡易履歷 — Qiu</title>
+<style>
+    :root{
+      --bg:#f6f8fb;
+      --card:#ffffff;
+      --accent:#2b6cb0;
+      --muted:#6b7280;
+      --glass: rgba(255,255,255,0.65);
+      --shadow: 0 6px 20px rgba(16,24,40,0.08);
+      font-family: Inter, "Noto Sans TC", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:linear-gradient(180deg,#eef6ff 0%,var(--bg) 100%);color:#0f172a}
+    .container{max-width:920px;margin:36px auto;padding:24px}
+    .card{background:var(--card);border-radius:14px;padding:22px;box-shadow:var(--shadow);display:grid;grid-template-columns:260px 1fr;gap:22px}
+    .sidebar{background:linear-gradient(180deg,var(--glass),rgba(255,255,255,0.8));padding:18px;border-radius:10px}
+    .avatar{width:100%;height:120px;border-radius:8px;background:linear-gradient(135deg,var(--accent),#6bb0e6);display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:28px}
+    h1{margin:0;font-size:20px}
+    h2{margin:6px 0 12px;font-size:14px;color:var(--muted)}
+    .muted{color:var(--muted);font-size:13px}
+    .section{margin-bottom:14px}
+    .label{font-weight:700;font-size:13px;margin-bottom:8px}
+    .pill{display:inline-block;padding:6px 10px;border-radius:999px;background:#eef7ff;color:var(--accent);font-size:13px;margin:4px 6px 4px 0}
+    .skill-list{display:flex;flex-wrap:wrap}
+    .main{padding:6px 8px}
+    .contact-item{display:flex;gap:8px;align-items:center;margin:8px 0;font-size:14px}
+    .edu-item,.exp-item{padding:8px;border-radius:8px;background:#fbfdff;margin-bottom:8px}
+    .title{font-weight:700}
+    .sub{color:var(--muted);font-size:13px}
+    .actions{display:flex;gap:8px;align-items:center}
+    button{border:0;padding:8px 12px;border-radius:8px;background:var(--accent);color:white;font-weight:600;cursor:pointer}
+    .ghost{background:transparent;color:var(--accent);border:2px solid rgba(43,108,176,0.12)}
+    footer{font-size:12px;color:var(--muted);text-align:center;margin-top:16px}
+    @media (max-width:760px){.card{grid-template-columns:1fr;}.sidebar{order:2}.main{order:1}}
+  </style>
+</head>
+<body>
+<div class="container">
+<div class="card" id="resumeCard">
+<aside class="sidebar">
+<img alt="Avatar" src="image/gallery_1011_1864083_29591.jpg" style="width:100%;height:120px;object-fit:cover;border-radius:8px;"/>
+<div style="margin-top:12px">
+<h1 id="name">Qiu</h1>
+<div class="muted">系所 / 主修（例如：資訊工程系）</div>
+</div>
+<div class="section">
+<div class="label">聯絡方式</div>
+<div class="contact-item"><span class="sub">📧</span><span id="email">youremail@example.com</span></div>
+<div class="contact-item"><span class="sub">📱</span><span id="phone">+886 9xx-xxx-xxx</span></div>
+<div class="contact-item"><span class="sub">🏠</span><span id="location">Taipei, Taiwan</span></div>
+</div>
+<div class="section">
+<div class="label">技能</div>
+<div class="skill-list" id="skills">
+<span class="pill">HTML</span>
+<span class="pill">CSS</span>
+<span class="pill">JavaScript</span>
+<span class="pill">Git</span>
+</div>
+</div>
+<div class="section">
+<div class="label">語言</div>
+<div class="muted">越南語（母語）</div>
+<div class="muted">英文（可溝通）</div>
+</div>
+</aside>
+<main class="main">
+<div style="display:flex;justify-content:space-between;align-items:start;gap:12px">
+<div class="actions" style="margin-left:auto;">
+<button onclick="printResume()">列印 / 另存成 PDF</button>
+<button class="ghost" onclick="downloadHTML()">下載 HTML</button>
+</div>
+</div>
+<div class="section">
+<div class="label">個人簡介</div>
+<div style="display:flex;align-items:flex-start;gap:16px;flex-wrap:wrap;">
+<div style="flex:1;min-width:240px;">
+<p id="summary">
+                一段短短的自我介紹，建議 2–4 句。描述你的專長、目標和你能為團隊帶來的價值。
+              </p>
+</div>
+<img alt="Profile Image" src="image/gallery_1011_1864083_29591.jpg" style="width:180px;height:auto;border-radius:10px;box-shadow:0 4px 12px rgba(0,0,0,0.1);object-fit:cover;"/>
+</div>
+</div>
+<div class="section">
+<div class="label">學歷</div>
+<div class="edu-item">
+<div class="title">某某大學 · 資訊工程學系</div>
+<div class="sub">2021 - 2025（預計） · 臺北市</div>
+<div class="muted">主修：軟體工程 / 嵌入式系統（可修改）</div>
+</div>
+</div>
+<div class="section">
+<div class="label">專案經驗</div>
+<div class="exp-item">
+<div class="title">專案名稱 A</div>
+<div class="sub">簡短描述 — 使用技術：HTML, CSS, JavaScript</div>
+</div>
+<div class="exp-item">
+<div class="title">專案名稱 B</div>
+<div class="sub">簡短描述 — 使用技術：React / Node.js（若適用）</div>
+</div>
+</div>
+<div class="section">
+<div class="label">其他</div>
+<ul>
+<li>社團／競賽經驗（例如：程式設計競賽、系學會）</li>
+<li>證照（如：英檢、證照）</li>
+<li>興趣（簡短）</li>
+</ul>
+</div>
+<footer>履歷編號：<strong>AU114011111</strong> · 產生於瀏覽器端</footer>
+</main>
+</div>
+</div>
+<script>
+    function printResume(){
+      window.print();
+    }
+
+    function downloadHTML(){
+      const content = document.documentElement.outerHTML;
+      const blob = new Blob([content], {type: 'text/html'});
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'resume_AU114011111.html';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(a.href);
+    }
+  </script>
+</body>
+</html>
