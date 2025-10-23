@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>簡單履歷 - AU114011144</title>
+  <style>
+    :root{--bg:#f6f8fb;--card:#ffffff;--muted:#6b7280;--accent:#0ea5a4}
+    *{box-sizing:border-box}
+    body{font-family:Inter, system-ui, -apple-system, "Noto Sans TC", "Microsoft JhengHei", Arial; background:var(--bg); margin:0; color:#0f172a}
+    .container{max-width:900px;margin:30px auto;padding:24px}
+    .card{background:var(--card);border-radius:12px;padding:22px;box-shadow:0 6px 18px rgba(12,16,28,0.08)}
+    .head{display:flex;gap:18px;align-items:center}
+    .avatar{width:96px;height:96px;border-radius:12px;overflow:hidden;box-shadow:0 0 6px rgba(0,0,0,0.1)}
+    .avatar img{width:100%;height:100%;object-fit:cover}
+    h1{margin:0;font-size:20px}
+    .meta{color:var(--muted);margin-top:6px;font-size:14px}
+    .grid{display:grid;grid-template-columns:1fr 320px;gap:18px;margin-top:18px}
+    .section{margin-top:14px}
+    .section h3{margin:0 0 8px 0;font-size:14px}
+    .badge{display:inline-block;border-radius:999px;padding:6px 10px;background:#eef2ff;font-size:13px;margin-right:8px;margin-bottom:8px}
+    .skill{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+    .bar{height:8px;background:#e6eef2;border-radius:8px;flex:1;margin-left:10px;overflow:hidden}
+    .bar > i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),#60a5fa)}
+    .btns{display:flex;gap:8px;margin-top:12px}
+    button{border:0;padding:8px 12px;border-radius:8px;background:#111827;color:white;cursor:pointer}
+    button.secondary{background:transparent;color:#111827;border:1px solid #e6e9ef}
+    footer{margin-top:18px;color:var(--muted);font-size:13px}
+
+    @media (max-width:820px){.grid{grid-template-columns:1fr;}.avatar{width:80px;height:80px}}
+    @media print{body{background:white} .container{box-shadow:none;margin:0} button,.btns{display:none}}
+  </style>
+</head>
+<body>
+  <main class="container">
+    <div class="card">
+      <div class="head">
+        <div class="avatar">
+          <img src="image/tải xuống.jpeg" alt="個人照片" />
+        </div>
+        <div>
+          <h1 id="name">阮垂玲</h1>
+          <div class="meta">學號：<strong id="student-id">AU114011144</strong> ・ 電子郵件：<span id="email">youremail@example.com</span></div>
+          <div class="meta">手機：<span id="phone">09xx-xxx-xxx</span> ・ 地點：台中市, 台灣</div>
+          <div class="btns">
+            <button onclick="window.print()">列印 / 存成 PDF</button>
+            <button class="secondary" onclick="downloadHTML()">下載 HTML</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid">
+        <section>
+          <div class="section">
+            <h3>自我介紹</h3>
+            <p id="summary">熱衷於前端開發與介面設計，具備基本 HTML/CSS/JavaScript 能力。喜歡把資訊整理成清晰的介面，並持續學習新技術。</p>
+          </div>
+
+          <div class="section">
+            <h3>學歷</h3>
+            <div>
+              <strong>亞洲大學</strong>
+              <div class="meta">資訊工程系 — 2021 - 2025（在學）</div>
+              <p style="margin-top:8px">主修 Web 開發與資料結構，參與過多個課程專案與小型團隊合作。</p>
+            </div>
+          </div>
+
+          <div class="section">
+            <h3>專案經驗</h3>
+            <ul>
+              <li><strong>個人作品集網站</strong> — 使用純 HTML/CSS/JS 製作，展示設計與互動練習。</li>
+              <li><strong>線上問卷系統（課程專案）</strong> — 負責前端與表單驗證，協同開發。</li>
+            </ul>
+          </div>
+
+          <div class="section">
+            <h3>語言</h3>
+            <div class="badge">越南語（母語）</div>
+            <div class="badge">英文（中等）</div>
+          </div>
+        </section>
+
+        <aside>
+          <div class="section">
+            <h3>技能</h3>
+            <div class="skill"><span>HTML / CSS</span><div class="bar" title="進度"><i style="width:92%"></i></div></div>
+            <div class="skill"><span>JavaScript</span><div class="bar"><i style="width:78%"></i></div></div>
+            <div class="skill"><span>Git / GitHub</span><div class="bar"><i style="width:70%"></i></div></div>
+            <div class="skill"><span>React（基礎）</span><div class="bar"><i style="width:40%"></i></div></div>
+          </div>
+
+          <div class="section">
+            <h3>聯絡資訊</h3>
+            <div class="meta">電郵：<br><span id="email2">youremail@example.com</span></div>
+            <div class="meta" style="margin-top:8px">Github：<a href="#" id="github">github.com/yourname</a></div>
+          </div>
+
+          <div class="section">
+            <h3>證照 / 獎項</h3>
+            <ul>
+              <li>校內程式競賽 — 優秀獎（示例）</li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+
+      <footer>
+        最後更新：<span id="updated">2025-10-23</span>
+      </footer>
+    </div>
+  </main>
+
+  <script>
+    function downloadHTML(){
+      const blob = new Blob([document.documentElement.outerHTML], {type: 'text/html'});
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'resume_AU114011144.html';
+      a.click();
+      URL.revokeObjectURL(a.href);
+    }
+  </script>
+</body>
+</html>
