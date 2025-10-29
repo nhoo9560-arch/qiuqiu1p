@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>關於我 — Leo</title>
+<style>
+  :root{
+    --bg:#fff6fa;
+    --card:#ffffff;
+    --accent:#e56b8a;
+    --muted:#8b6f7a;
+    --glass: rgba(255,255,255,0.65);
+    --shadow: 0 6px 20px rgba(230,100,130,0.15);
+    font-family: "Inter","Noto Sans TC",system-ui;
+  }
+  *{box-sizing:border-box;}
+  html,body{
+    height:100%;
+    margin:0;
+    background:linear-gradient(180deg,#ffeef5 0%,var(--bg) 100%);
+    color:#3d2b30;
+  }
+  .container{max-width:960px;margin:36px auto;padding:24px;}
+  .card{
+    background:var(--card);
+    border-radius:18px;
+    padding:22px;
+    box-shadow:var(--shadow);
+    display:grid;
+    grid-template-columns:260px 1fr;
+    gap:22px;
+  }
+  .sidebar{
+    background:linear-gradient(180deg,var(--glass),rgba(255,255,255,0.8));
+    padding:18px;border-radius:12px;text-align:center;
+  }
+  .avatar{
+    width:120px;height:120px;border-radius:12px;
+    object-fit:cover;display:block;margin:auto;
+    box-shadow:0 4px 10px rgba(229,107,138,0.3);
+  }
+  h1{margin:12px 0 4px;font-size:22px;color:var(--accent);}
+  h2{margin:0;color:var(--muted);font-size:14px;}
+  .section{margin-top:20px;text-align:left;}
+  .label{font-weight:700;font-size:15px;margin-bottom:8px;color:var(--accent);}
+  .muted{color:var(--muted);font-size:13px;}
+  .contact-item{display:flex;align-items:center;gap:8px;margin:6px 0;font-size:14px;}
+  .main{padding:6px 8px;}
+  .pet-gallery{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px;}
+  .pet-gallery img{
+    width:100px;height:100px;object-fit:cover;
+    border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.1);
+  }
+  a.social{
+    display:inline-flex;align-items:center;gap:6px;
+    text-decoration:none;color:var(--accent);
+    border:1.5px solid rgba(229,107,138,0.25);
+    padding:6px 10px;border-radius:999px;font-size:13px;margin:4px;
+    transition:all 0.2s ease;
+  }
+  a.social:hover{background:var(--accent);color:white;}
+  .kpi{
+    display:flex;gap:10px;margin-top:10px;flex-wrap:wrap;
+  }
+  .kpi .item{background:#fff0f6;padding:8px 12px;border-radius:10px;font-weight:700;color:var(--accent);}
+  blockquote{margin:8px 0;padding-left:10px;color:var(--muted);border-left:4px solid var(--accent);}
+  footer{font-size:12px;color:var(--muted);text-align:center;margin-top:20px;}
+  @media(max-width:760px){
+    .card{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="card">
+    <aside class="sidebar">
+      <!-- Avatar: cậu có thể thay src thành đường dẫn ảnh của cậu -->
+      <img src="image/e0eedac7-c589-454e-9aaf-b8b43783406a.jpeg" alt="Avatar" class="avatar"/>
+      <h1>Leo</h1>
+      <h2>國立臺灣大學 · 健康產業管理學系 · 大一</h2>
+
+      <div class="section">
+        <div class="label">聯絡方式</div>
+        <div class="contact-item">📧 leo@example.com</div>
+        <div class="contact-item">📱 +886 9xx-xxx-xxx</div>
+        <div class="contact-item">🏠 Taipei, Taiwan</div>
+      </div>
+
+      <div class="section">
+        <div class="label">社群連結</div>
+        <a class="social" href="https://facebook.com" target="_blank">🌸 Facebook</a>
+        <a class="social" href="https://instagram.com" target="_blank">💞 Instagram</a>
+      </div>
+
+      <div class="section">
+        <div class="label">小紀事</div>
+        <div class="kpi">
+          <div class="item">🐾 4 隻寵物</div>
+          <div class="item">📷 喜歡拍貓狗</div>
+          <div class="item">🎓 大一新鮮人</div>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="section">
+        <div class="label">關於我</div>
+        <p>嗨！我是 Leo，目前就讀於國立臺灣大學健康產業管理學系。<br>
+        我熱愛生命與自然，從小就喜歡接觸動物。選擇這個科系，是因為我希望未來能把健康管理和動物照護結合起來，改善人與動物共同生活的品質。<br>
+        我個性開朗、細心，喜歡觀察動物的行為，也樂於和人分享照護經驗。</p>
+      </div>
+
+      <div class="section">
+        <div class="label">大學生活</div>
+        <p>大學生活充滿探索：課程包含健康管理、醫療政策、產業分析等，讓我開始理解整個健康產業的運作方式。<br>
+        課餘我參加了校內動物保護社團，負責幫忙照顧校園流浪貓，並與社團夥伴一起辦小型領養、宣導活動。<br>
+        與朋友在圖書館討論課業與未來計畫，是我最享受的日常之一。</p>
+      </div>
+
+      <div class="section">
+        <div class="label">我的寵物</div>
+        <div class="pet-gallery">
+          <img src="image/hinh-anh-tho-cute-tuyet-dep_014117172.jpg" alt="Cat 1">
+          <img src="image/hinh-anh-thu-cung-cute-dang-yeu_014117794.jpg" alt="Dog 1">
+          <img src="image/OIP.jpeg" alt="Cat 2">
+          <img src="image/phu-kien-thu-cung-Ha-Noi-1.avif" alt="Dog 2">
+        </div>
+        <p class="muted">貓咪「Momo」愛晒太陽；狗狗「Bobo」喜歡追球。牠們陪伴我度過許多開心時光。</p>
+      </div>
+
+      <div class="section">
+        <div class="label">興趣與喜好</div>
+        <ul>
+          <li>📸 攝影：記錄生活與寵物瞬間</li>
+          <li>🍰 烘焙：嘗試做簡單甜點放鬆心情</li>
+          <li>🎧 聽音樂：適合讀書時的輕音樂</li>
+          <li>🌿 散步：喜歡帶寵物到公園走走</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <div class="label">未來目標</div>
+        <p>短期：在大學打好健康管理與產業分析的基礎，參與更多與寵物健康相關的專案。<br>
+        中長期：希望進入研究所深造，或參與寵物健康/動物醫療相關的產業，推動更完善的寵物照護服務。</p>
+      </div>
+
+      <div class="section">
+        <div class="label">喜歡的名言</div>
+        <blockquote>
+          「善待動物，也是在善待我們自己。」<br>—— Leo
+        </blockquote>
+      </div>
+
+      <footer>© 2025 Leo · 用愛與溫柔打造的粉紅世界 💗</footer>
+    </main>
+  </div>
+</div>
+</body>
+</html>
